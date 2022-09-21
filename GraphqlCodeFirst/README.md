@@ -1,0 +1,2 @@
+- Resolvers provide the instructions for turning a GraphQL operation (meaning: a query, mutation, or subscription) into Data
+- Input Types allow us to take an Object as an Argument type
