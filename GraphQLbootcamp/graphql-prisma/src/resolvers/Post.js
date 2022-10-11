@@ -1,13 +1,23 @@
 const Post = {
-    author(parent, args, { db }, info) {
-        return db.users.find((user) => {
-            return user.id === parent.author
+    async author(parent, args, { db, prisma }, info) {
+        const id = parseInt(parent.author)
+        const user = await prisma.user.findFirst({
+            where: {
+                id: id,
+            }
         })
+
+        return user
     },
-    comments(parent, args, { db }, info) {
-        return db.comments.filter((comment) => {
-            return comment.post === parent.id
+    async comments(parent, args, { db, prisma }, info) {
+        const userId = parseInt(parent.author)
+        const comments = await prisma.comment.findMany({
+            where: {
+                author: userId
+            }
         })
+
+        return comments
     }
 }
 

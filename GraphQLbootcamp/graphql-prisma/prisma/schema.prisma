@@ -27,7 +27,7 @@ model Post {
   body        String
   published   Boolean
 
-  userRelation     User       @relation(fields: [author], references: [id])
+  userRelation     User       @relation(fields: [author], references: [id], onDelete: SetNull)
   author   Int
 
   comments Comment[]
@@ -40,7 +40,7 @@ model Comment {
   author     Int
   post       Int
 
-  userRelation User @relation(fields: [author], references: [id])
-  postReelation Post @relation(fields: [post], references: [id])
+  userRelation User @relation(fields: [author], references: [id], onDelete: SetNull)
+  postReelation Post @relation(fields: [post], references: [id], onDelete: SetNull)
 
 }
