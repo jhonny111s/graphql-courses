@@ -21,7 +21,6 @@ const Mutation = {
     },
     deleteUser: async (parent, args, { db, prisma }, info) => {
         //try {
-        console.log(process.env.NODE_ENV);
         const id = parseInt(args.id)
         const user = await prisma.user.findFirst({
             where: {
