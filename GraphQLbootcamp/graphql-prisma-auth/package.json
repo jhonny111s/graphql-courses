@@ -1,0 +1,27 @@
+{
+  "name": "graphql-prisma-auth",
+  "version": "1.0.0",
+  "description": "```bash npx prisma migrate dev ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon -e js,graphql --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/node": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
+    "@prisma/client": "^4.4.0",
+    "nodemon": "^2.0.20",
+    "prisma": "^4.4.0"
+  },
+  "dependencies": {
+    "@graphql-yoga/node": "^2.13.13",
+    "bcrypt": "^5.1.0",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^8.5.1"
+  }
+}

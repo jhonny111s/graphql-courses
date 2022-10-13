@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Comment" ALTER COLUMN "author" DROP NOT NULL,
+ALTER COLUMN "post" DROP NOT NULL;
+
+-- AlterTable
+ALTER TABLE "Post" ALTER COLUMN "author" DROP NOT NULL;
